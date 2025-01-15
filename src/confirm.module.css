@@ -1,0 +1,18 @@
+.cnfbg {
+  background-color: #fff;
+  width: 60%;
+  max-width: 930px;
+  margin: 3% auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.cnfbg h4 {
+  font-size: 1.4rem;
+}
+
+.cnfbg p {
+  width: 90%;
+  margin: 10px auto 5px;
+}

@@ -1,0 +1,160 @@
+.prof_cont h3,
+.eprof h3 {
+  font-size: 1.4rem;
+  color: #020659;
+  padding: 20px 0;
+}
+.eprof h3 {
+  padding: 20px 20px;
+}
+
+.prof_bdy {
+  padding: 40px 20px;
+  /* background-color: aqua; */
+}
+
+.eprof_bdy {
+  padding: 90px 50px 30px;
+}
+
+.epinfo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.lab_inp {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.lab_inp label,
+#ep_sel {
+  display: inline-block;
+  width: 170px;
+  font-size: 1rem;
+  color: #b3b3b3;
+  border: none;
+  padding: 10px 0 0 10px;
+  background: transparent;
+  /* background-color: #020659; */
+}
+
+#ep_sel {
+  width: 80px;
+  padding: 0;
+  outline: none;
+}
+
+.lab_inp input,
+#gen_sel {
+  font-size: 1.1rem;
+  padding: 10px 4px 0;
+  width: 80%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.prof_img {
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  margin-bottom: 50px;
+}
+
+.prof_img img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+}
+
+.btn_txt button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 7px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #b3b3b3;
+  border-radius: 7px;
+  background-color: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn_txt button:hover {
+  background-color: #ffffffb7;
+}
+
+.btn_txt span {
+  display: block;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+}
+
+.prof_det,
+.eprof_bdy {
+  border: 1px solid #b3b3b3;
+  border-radius: 20px;
+}
+
+.prof_det {
+  margin-top: 60px;
+  padding: 20px 30px;
+}
+
+.prof_det h4 {
+  font-size: 1.3rem;
+  padding: 35px 0 0;
+}
+.eprof h4 {
+  font-size: 1.2rem;
+  margin: 40px 0;
+}
+
+.prof_det_div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* display: flex;
+  justify-content: space-between;
+  align-items: start; */
+  gap: 40px;
+  padding: 15px 0;
+}
+
+/* .prof_det_div div {
+  background-color: #020659;
+  /* flex: 1 1 200px; 
+} */
+
+.prof_det_div span {
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  margin-bottom: 10px;
+}
+
+.prof_det_div p {
+  font-size: 1.2rem;
+  padding: 5px 0;
+}
+
+.edit_btn_div {
+  text-align: end;
+  margin: 10px 0;
+}
+
+.edit_btn_div button {
+  background-color: #020659;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 1rem;
+}
+
+.edit_btn_div img {
+  padding: 0 5px;
+}

@@ -1,0 +1,68 @@
+.leav_bdy h3 {
+  font-size: 1.3rem;
+  color: #020659;
+  padding: 20px 0;
+}
+
+.leav_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.leav_text {
+  grid-column: 1 / span 2;
+}
+
+.leav_inp label,
+.leav_text label {
+  display: block;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  padding: 5px;
+}
+
+.leav_inp input,
+.leav_inp select,
+.leav_text textarea {
+  width: 100%;
+  padding: 20px 0 15px 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.leav_inp select {
+  appearance: none; /* Removes default dropdown arrow */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.leav_inp option {
+  background-color: #f8f9fa;
+  font-size: 1rem;
+  padding: 15px;
+}
+
+.leav_text textarea {
+  height: 200px;
+}
+
+.leav_btn {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.leav_btn button {
+  background-color: #2d3484;
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 1rem;
+}
+
+.leav_btn button:hover {
+  background-color: #020659;
+}

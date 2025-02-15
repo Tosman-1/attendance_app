@@ -1,7 +1,7 @@
 import useFunction from "../components/customHook";
 import Forms from "../components/forms";
 
-const Resgister = () => {
+const Register = () => {
   const texts = {
     text: "Create New Account",
     sub_text: "Welcome to SQI Attendance app",
@@ -18,7 +18,7 @@ const Resgister = () => {
   };
 
   const { formData, setFormData, errors, handleSubmit } = useFunction(
-    "http://localhost/sqi-attendance-app/backend/register.php",
+    "register.php",
     texts
   );
 
@@ -35,4 +35,4 @@ const Resgister = () => {
   );
 };
 
-export default Resgister;
+export default Register;

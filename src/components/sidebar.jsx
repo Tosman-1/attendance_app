@@ -15,17 +15,17 @@ const Sidebar = () => {
       </div>
       <div className={style.midprt}>
         <ul>
-          <Link to="/">
-            <li className={location.pathname === "/" ? style.active : ""}>
+          <Link to="/home">
+            <li className={location.pathname === "/home" ? style.active : ""}>
               <img src="/dashboard.svg" alt="" />
               <p>Dashboard</p>
             </li>
           </Link>
-          <Link to="/profile">
+          <Link to="/home/profile">
             <li
               className={
-                location.pathname === "/profile" ||
-                location.pathname === "/edit_profile"
+                location.pathname === "/home/profile" ||
+                location.pathname === "/home/edit_profile"
                   ? style.active
                   : ""
               }
@@ -34,9 +34,11 @@ const Sidebar = () => {
               <p>Profile</p>
             </li>
           </Link>
-          <Link to="/setting">
+          <Link to="/home/setting">
             <li
-              className={location.pathname === "/setting" ? style.active : ""}
+              className={
+                location.pathname === "/home/setting" ? style.active : ""
+              }
             >
               <img src="/setting.svg" alt="" />
               <p>Setting</p>

@@ -4,6 +4,7 @@ import "../dash_calender.css";
 import Ancalender from "../components/ancalender";
 import Icons from "../components/icons";
 import Page_top from "../components/page_top";
+import useUserStore from "../store/userStore";
 
 const Dashboard = () => {
   const [analysis, setAnalysis] = useState([
@@ -13,6 +14,8 @@ const Dashboard = () => {
     { text: "Delay", value: "5" },
   ]);
 
+  const { user } = useUserStore();
+
   return (
     <div className="main_cont">
       <Page_top />
@@ -21,8 +24,15 @@ const Dashboard = () => {
         <div className={style.nmanls}>
           <div className={style.nmotr}>
             <div className={`${style.nmatpc} ${style.nmlvdp}`}>
-              <h3>Micheal Irabor</h3>
-              <p>UI/UX Design / 123456</p>
+              <h3>
+                {user ? `${user.firstname} ${user.lastname}` : "_ _ _ _ _ _ "}
+              </h3>
+              {user ? (
+                <p>{`${user.department} / ${user.student_id}`}</p>
+              ) : (
+                <p>Loading user data...</p>
+              )}
+
               <p>Level 2</p>
               <p>Active</p>
             </div>

@@ -8,6 +8,7 @@ const Login = () => {
     mid_text: true,
     bottom_text: "Don't have an account? Sign-up",
     currentuser: "Student",
+    type: "login",
     path: "",
     labels: [
       { label: "Student ID", placeholder: "12345", id: "SID" },
@@ -16,7 +17,7 @@ const Login = () => {
   };
 
   const { formData, setFormData, errors, handleSubmit } = useFunction(
-    "http://localhost/sqi-attendance-app/backend/login.php",
+    "/login.php",
     texts
   );
 

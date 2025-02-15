@@ -1,8 +1,9 @@
 import Page_top from "../components/page_top";
 import { Link } from "react-router-dom";
 import style from "../profile.module.css";
-
+import useUserStore from "../store/userStore";
 const Profile = () => {
+  const { user } = useUserStore();
   return (
     <>
       <div className="main_cont">
@@ -11,7 +12,7 @@ const Profile = () => {
           <h3>Personal Data</h3>
           <div className={style.prof_bdy}>
             <div className={style.prof_img}>
-              <img src="/prof_pic.png" alt="user" />
+              <img src={user?.picture || "/prof_pic.png"} alt="user" />
               <div className={style.btn_txt}>
                 <button>Upload Photo</button>
                 <p>
@@ -25,26 +26,28 @@ const Profile = () => {
               <div className={style.prof_det_div}>
                 <div>
                   <span>Full Name</span>
-                  <p>Michael Ibarabo</p>
+                  <p>{`${user.firstname} ${user.lastname}`}</p>
                 </div>
                 <div>
                   <span>Email</span>
-                  <p>MichaelIbarabo@gmail.com</p>
+                  <p>{user.email}</p>
                 </div>
                 <div>
                   <span>Phone</span>
-                  <p>0700000000</p>
+                  <p>
+                    {user.phone_num ? user.phone_num : "_ _ _ _ _ _ _ _ _ _ _"}
+                  </p>
                 </div>
                 <div>
                   <span>City</span>
-                  <p>Ibadan</p>
+                  <p>{user.city ? user.city : "_ _ _ _ _ _ _ "}</p>
                 </div>
               </div>
               <h4>SQI Profile</h4>
               <div className={style.prof_det_div}>
                 <div>
                   <span>Course of Study</span>
-                  <p>Product Design</p>
+                  <p>{user.department}</p>
                 </div>
                 <div>
                   <span>Duration</span>
@@ -52,7 +55,7 @@ const Profile = () => {
                 </div>
                 <div>
                   <span>Student ID</span>
-                  <p>12345</p>
+                  <p>{user.student_id}</p>
                 </div>
                 <div>
                   <span>Level</span>
@@ -60,7 +63,7 @@ const Profile = () => {
                 </div>
               </div>
               <div className={style.edit_btn_div}>
-                <Link to="/edit_profile">
+                <Link to="/home/edit_profile">
                   <button>
                     <img src="/mdi_edit-outline.svg" alt="" />
                     <span>Edit Profile</span>

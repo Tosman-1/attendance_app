@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import axios from "axios";
+// import axios from "axios";
+import Api from "../api";
 
 const useFunction = (url, texts) => {
   // Initialize form data dynamically based on labels
@@ -9,6 +11,8 @@ const useFunction = (url, texts) => {
   );
 
   const [errors, setErrors] = useState({});
+
+  const navigate = useNavigate();
 
   // Build Yup validation schema dynamically
   const validationSchema = Yup.object(
@@ -45,12 +49,21 @@ const useFunction = (url, texts) => {
   );
 
   const submitForm = () => {
-    axios
-      .post(url, formData)
+    Api.post(url, formData)
       .then((response) => {
         console.log(response.data);
         if (response.data.message) {
           alert(response.data.message);
+
+          if (response.data.status === "Success") {
+            if (texts.type === "login") {
+              // Save token in sessionStorage
+              sessionStorage.setItem("accessToken", response.data.token);
+
+              // Redirect to home page after successful login or registration
+              navigate("/home");
+            }
+          }
           // Reset form on successful submission
           setFormData(
             texts.labels.reduce(
@@ -61,8 +74,8 @@ const useFunction = (url, texts) => {
         }
       })
       .catch((error) => {
-        console.error("Error adding user:", error);
-        alert("Failed to add user.");
+        console.error("Error:", error);
+        alert("Something is wrong.");
       });
   };
 
